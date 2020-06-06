@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Payment Flow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="style.css"
+      type="text/css"
+      media="all"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="nav-wrapper lime darken-1 white-text">
+          <a href="#" class="brand-logo">Payment Flow</a>
+          <ul id="nav-mobile" class="paths right hide-on-med-and-down">
+            <li><a href="">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col s12 m10 offset-s0 offset-m1">
+          <div class="card grey lighten-5">
+            <div class="card-content">
+              <span class="card-title">Create Token</span>
+              <form id="card-form">
+                <input
+                  type="text"
+                  id="cardholder-name"
+                  placeholder="Customer Name"
+                />
+                <input
+                  type="text"
+                  id="cardholder-email"
+                  placeholder="Customer Email"
+                />
+                <input
+                  type="text"
+                  id="cardholder-line"
+                  placeholder="Customer Address"
+                />
+                <input
+                  type="text"
+                  id="cardholder-city"
+                  placeholder="Customer City"
+                />
+                <input
+                  type="text"
+                  id="cardholder-country"
+                  placeholder="Customer Country"
+                />
+                <input
+                  type="text"
+                  id="cardholder-phone"
+                  placeholder="Customer Phone"
+                />
+                <div id="card-secure-fields"></div>
+                <br />
+                <button
+                class="btn waves-effect lime darken-1"
+                type="submit"
+                >
+                  Generate Token
+                </button>
+                <div class="card-action">
+                  <p id="tokenSpace"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m10 offset-s0 offset-m1">
+          <div class="card grey lighten-5">
+            <div class="card-content">
+              <span class="card-title">Payment</span>
+              <form id="payment-form">
+                <input
+                  type="number"
+                  id="amount"
+                  placeholder="Amount"
+                />
+                <input
+                  type="text"
+                  id="description"
+                  placeholder="Purchase description"
+                />
+                <input
+                  type="text"
+                  id="currency"
+                  placeholder="Currency"
+                />
+                <br /><br />
+                <button
+                  class="btn waves-effect lime darken-1"
+                  type="submit"
+                >
+                  Pay
+                </button>
+                <div class="card-action">
+                  <p id="paymentSpace"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m10 offset-s0 offset-m1">
+          <div class="card grey lighten-5">
+            <div class="card-content">
+              <span class="card-title">Autorize</span>
+              <form id="authorize-form">
+                <input
+                  type="text"
+                  id="auth-payment-id"
+                  placeholder="Payment ID"
+                />
+                <input
+                type="text"
+                id="auth-token-id"
+                placeholder="Token ID"
+              />
+                <br /><br />
+                <button
+                  class="btn waves-effect lime darken-1"
+                  type="submit"
+                >
+                  Authorize
+                </button>
+                <div class="card-action">
+                  <p id="authSpace"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m10 offset-s0 offset-m1">
+          <div class="card grey lighten-5">
+            <div class="card-content">
+              <span class="card-title">Capture</span>
+              <form id="capture-form">
+                <input
+                  type="text"
+                  id="cap-payment-id"
+                  placeholder="Payment ID"
+                />
+                <br /><br />
+                <button
+                  class="btn waves-effect lime darken-1"
+                  type="submit"
+                >
+                  Capture
+                </button>
+                <div class="card-action">
+                  <p id="capSpace"></p>
+                  <p id="capErrorSpace"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m10 offset-s0 offset-m1">
+          <div class="card grey lighten-5">
+            <div class="card-content">
+              <span class="card-title">Refound</span>
+              <form id="refound-form">
+                <input
+                  type="text"
+                  id="ref-payment-id"
+                  placeholder="Payment ID"
+                />
+                <br /><br />
+                <button
+                  class="btn waves-effect lime darken-1"
+                  type="submit"
+                >
+                  Refound
+                </button>
+                <div class="card-action">
+                  <p id="refSpace"></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://js.paymentsos.com/v2/latest/secure-fields.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="payment.js"></script>
+    <script type="text/javascript" src="autorize.js"></script>
+    <script type="text/javascript" src="refound.js"></script>
+    <script type="text/javascript" src="capture.js"></script>
+    <script type="text/javascript" src="token.js"></script>
+    <script type="text/javascript" src="PaymentFlow.js"></script>
+  </body>
+</html>
