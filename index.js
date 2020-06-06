@@ -15,4 +15,5 @@ app.use('/api',require('./routes/routes'));
 
 app.listen(app.get('port'), ()=>{
     console.log('Runnning app on port ', app.get('port'));
+    console.log("Open your browser on the next URL: http://localhost:30000/index.html")
 }); 
